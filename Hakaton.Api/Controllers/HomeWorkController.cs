@@ -1,4 +1,5 @@
-﻿using HakatonApi.Models.HomeWorkDtos;
+﻿using HakatonApi.Filters;
+using HakatonApi.Models.HomeWorkDtos;
 using HakatonApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,7 @@ namespace HakatonApi.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 [Authorize]
+[ValidateModel]
 public class HomeWorkController : ControllerBase
 {
     private readonly IHomeWorkService homeWorkService;
@@ -15,6 +17,7 @@ public class HomeWorkController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(typeof(HomeWorkView),StatusCodes.Status200OK)]
+    [IsCourseUserOrAdmin(true)]
     public async Task<IActionResult> CreateHomeWork(Guid courseId,[FromForm] CreateHomeWorkDto createHomeWorkDto)
     {
         var homeWorkView = await homeWorkService.CreateHomeWork(courseId, createHomeWorkDto);
