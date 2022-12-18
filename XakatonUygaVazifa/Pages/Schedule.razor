@@ -1,0 +1,60 @@
+﻿@page "/schedule"
+@inject HttpClient Http
+@using XakatonUygaVazifa.Shared
+
+<PageTitle>Schedule</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Homework Schedule</MudText>
+@if (schedules == null)
+{
+    <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+}
+else
+{
+    <MudTable Items="schedules" Hover="true" SortLabel="Sort By" Elevation="0" Style="width: 80%; background-color: gainsboro">
+        @*<HeaderContent>
+    <MudTh><MudTableSortLabel SortBy="new Func<Schedules, object>(x=>x.Task!)">Mavzu</MudTableSortLabel></MudTh>
+    <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<Schedules, object>(x=>x.Date)">Date</MudTableSortLabel></MudTh>
+    </HeaderContent>*@
+        <RowTemplate>
+            <div class="schedules">
+                <MudText DataLabel="Summary">@context.Task</MudText>
+                <MudText DataLabel="Date">@context.Date</MudText>
+            </div>
+
+        </RowTemplate>
+    </MudTable>
+}
+
+@code {
+    private Schedules[]? schedules;
+
+    protected override async Task OnInitializedAsync()
+    {
+        schedules = await Http.GetFromJsonAsync<Schedules[]>("sample-data/schedule.json");
+    }
+    public class Schedules
+    {
+        public DateTime Date { get; set; }
+
+        public string? Task { get; set; }
+    }
+}
+
+<style>
+    .schedules {
+        padding: 10px 20px;
+        margin: 10px 1px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    tr {
+        background-color: gainsboro;
+    }
+
+    .mud-table-hover .mud-table-container .mud-table-root .mud-table-body .mud-table-row:hover {
+        background-color: gainsboro;
+    }
+</style>

@@ -1,0 +1,41 @@
+﻿@page "/register"
+
+<PageTitle>Register</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Sign Up</MudText>
+<MudTextField @bind-Value="TextValue" Label="User Name" Variant="Variant.Filled" Margin="Margin.Dense" Style="width: 30%; background-color: white;" />
+<MudTextField @bind-Value="TextValue" Label="First Name" Variant="Variant.Filled" Margin="Margin.Dense" Style="width: 30%; background-color: white;" />
+<MudTextField @bind-Value="TextValue" Label="Last Name" Variant="Variant.Filled" Margin="Margin.Dense" Style="width: 30%; background-color: white;" />
+<MudTextField @bind-Value="Password" Label="Password" Variant="Variant.Filled" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="ButtonTestclick" AdornmentAriaLabel="Show Password" Style="width: 30%; background-color: white;" />
+<MudButton Color="Color.Primary" Variant="Variant.Filled" Style="margin-top: 10px">Submit</MudButton>
+
+@code {
+    public string? TextValue { get; set; }
+    public string? Password { get; set; }
+
+    bool isShow;
+    InputType PasswordInput = InputType.Password;
+    string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+
+    void ButtonTestclick()
+    {
+        @if (isShow)
+        {
+            isShow = false;
+            PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+            PasswordInput = InputType.Password;
+        }
+        else
+        {
+            isShow = true;
+            PasswordInputIcon = Icons.Material.Filled.Visibility;
+            PasswordInput = InputType.Text;
+        }
+    }
+}
+
+<style>
+    .mud-container .mud-container-maxwidth-lg {
+        background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+    }
+</style>

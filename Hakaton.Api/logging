@@ -7178,3 +7178,31 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
 2022-12-18 20:50:40.055 +05:00 [INF] Executed action HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi) in 25947.2773ms
 2022-12-18 20:50:40.062 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
 2022-12-18 20:50:40.067 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=0be877c7-899a-47d9-bc9d-47a0a52833b8 multipart/form-data;+boundary=----WebKitFormBoundaryP5pTNp5SMOu5fbpO 265493 - 200 - application/json;+charset=utf-8 25966.7219ms
+2022-12-18 21:16:52.073 +05:00 [INF] User profile is available. Using 'C:\Users\msi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-18 21:16:52.225 +05:00 [INF] Now listening on: https://localhost:7251
+2022-12-18 21:16:52.226 +05:00 [INF] Now listening on: http://localhost:5251
+2022-12-18 21:16:52.229 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-18 21:16:52.230 +05:00 [INF] Hosting environment: Development
+2022-12-18 21:16:52.230 +05:00 [INF] Content root path: D:\Uyga-Vazifa\Hakaton.Api\
+2022-12-18 21:16:52.657 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/index.html - -
+2022-12-18 21:16:52.849 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/index.html - - - 200 - text/html;charset=utf-8 194.2661ms
+2022-12-18 21:16:52.888 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - -
+2022-12-18 21:16:52.889 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - -
+2022-12-18 21:16:52.892 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 4.2132ms
+2022-12-18 21:16:52.909 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.4876ms
+2022-12-18 21:16:53.011 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - -
+2022-12-18 21:16:53.131 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 119.6057ms
+2022-12-18 21:26:18.294 +05:00 [INF] User profile is available. Using 'C:\Users\msi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-18 21:26:18.474 +05:00 [INF] Now listening on: https://localhost:7251
+2022-12-18 21:26:18.475 +05:00 [INF] Now listening on: http://localhost:5251
+2022-12-18 21:26:18.482 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-18 21:26:18.483 +05:00 [INF] Hosting environment: Development
+2022-12-18 21:26:18.485 +05:00 [INF] Content root path: D:\Uyga-Vazifa\Hakaton.Api\
+2022-12-18 21:26:18.881 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/index.html - -
+2022-12-18 21:26:19.218 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/index.html - - - 200 - text/html;charset=utf-8 342.3290ms
+2022-12-18 21:26:19.256 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - -
+2022-12-18 21:26:19.256 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - -
+2022-12-18 21:26:19.264 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 8.1268ms
+2022-12-18 21:26:19.293 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.2237ms
+2022-12-18 21:26:19.407 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - -
+2022-12-18 21:26:19.572 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.3683ms

@@ -1,0 +1,44 @@
+﻿@page "/check"
+@inject HttpClient Http
+@using XakatonUygaVazifa.Shared
+
+<PageTitle>Check</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Check</MudText>
+@if (checks == null)
+{
+    <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+}
+else
+{
+    <MudTable Items="checks" Hover="true" SortLabel="Sort By" Elevation="0" Style="width: 80%">
+        <HeaderContent>
+            <MudTh><MudTableSortLabel SortBy="new Func<CheckTable, object>(x=>x.Name)">Ism</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<CheckTable, object>(x=>x.Task!)">Tema</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<CheckTable, object>(x=>x.Date)">Sana</MudTableSortLabel></MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Temp. (C)">@context.Name</MudTd>
+            <MudTd DataLabel="Summary">@context.Task</MudTd>
+            <MudTd DataLabel="Date">@context.Date</MudTd>
+        </RowTemplate>
+    </MudTable>
+}
+
+
+@code {
+    private CheckTable[]? checks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        checks = await Http.GetFromJsonAsync<CheckTable[]>("sample-data/checkTable.json");
+    }
+    public class CheckTable
+    {
+        public DateTime Date { get; set; }
+
+        public string Name { get; set; }
+
+        public string? Task { get; set; }
+    }
+}
