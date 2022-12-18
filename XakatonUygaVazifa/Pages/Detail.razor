@@ -1,0 +1,46 @@
+﻿@page "/detail"
+@inject IDialogService Dialog
+
+
+<PageTitle>Detail</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Detail Page</MudText>
+
+<div class="studentFiles">
+    <div class="files">
+        <input type="file" id="myFile" name="filename">
+        <p style="margin-top: 10px;">Description
+        </p>
+    </div>
+</div>
+
+<MudTextField T="string" Label="Multiline" Variant="Variant.Text" Lines="3" Style="width:80%;" />
+
+<MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined" OverrideStyles="_overrideStyles" Style="margin-top: 10px;">
+    <MudButton Color="Color.Secondary" Variant="Variant.Filled">Accept</MudButton>
+    <MudButton Color="Color.Primary" Variant="Variant.Filled">Decline</MudButton>
+</MudButtonGroup>
+
+@code {
+    private bool _overrideStyles;
+    IList<IBrowserFile> files = new List<IBrowserFile>();
+    private void UploadFiles(IBrowserFile file)
+    {
+        files.Add(file);
+    }
+    private void OpenDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+    }
+}
+
+
+<style>
+    .files {
+        padding: 10px;
+        border-radius: 10px;
+        width: 60%;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        background-color: white;
+    }
+</style>
