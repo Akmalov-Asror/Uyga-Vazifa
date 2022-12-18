@@ -4,7 +4,6 @@ using HakatonApi.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -16,23 +15,19 @@ namespace HakatonApi.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.11")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
-
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.11");
 
             modelBuilder.Entity("HakatonApi.Entities.Course", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("CourseName")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("Key")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -41,9 +36,9 @@ namespace HakatonApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            Id = new Guid("c6cd0d71-6c4e-4c8d-bfdb-219fa1f7e6be"),
                             CourseName = "firstRoom",
-                            Key = new Guid("688cc0a5-8b9f-4e94-8977-c27186f9ba84")
+                            Key = new Guid("eefb30f9-8645-4fc9-bf11-d25adaab181a")
                         });
                 });
 
@@ -51,16 +46,16 @@ namespace HakatonApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("CourseId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("IsAdmin")
-                        .HasColumnType("boolean");
+                        .HasColumnType("INTEGER");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -73,10 +68,10 @@ namespace HakatonApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f6be323d-8eb1-427d-9151-7fedd4c15209"),
-                            CourseId = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            Id = new Guid("f6212935-eaa5-442c-bfcb-c36366eb5a11"),
+                            CourseId = new Guid("c6cd0d71-6c4e-4c8d-bfdb-219fa1f7e6be"),
                             IsAdmin = true,
-                            UserId = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59")
+                            UserId = new Guid("eb970026-e187-4c1d-9895-0106ab63bb2f")
                         });
                 });
 
@@ -84,34 +79,34 @@ namespace HakatonApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("CourseId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("CreateDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("EndDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FilePath")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("MaxScore")
-                        .HasColumnType("integer");
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime?>("StartDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Status")
-                        .HasColumnType("integer");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("TaskDescription")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("TaskName")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -122,8 +117,8 @@ namespace HakatonApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f86f9202-59c2-483e-9bdd-c06d3fb4b9f8"),
-                            CourseId = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            Id = new Guid("36b7acb8-f524-4aa0-9d8f-cc3890ed30d8"),
+                            CourseId = new Guid("c6cd0d71-6c4e-4c8d-bfdb-219fa1f7e6be"),
                             MaxScore = 100,
                             Status = 0,
                             TaskDescription = "bahonalar o`tmaydi, hatto spravka ham",
@@ -131,8 +126,8 @@ namespace HakatonApi.Migrations
                         },
                         new
                         {
-                            Id = new Guid("46952c95-f2fa-478c-b344-98f9dfc6cf22"),
-                            CourseId = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            Id = new Guid("2108aa9b-f62e-47e5-8e8e-5843549ffb9a"),
+                            CourseId = new Guid("c6cd0d71-6c4e-4c8d-bfdb-219fa1f7e6be"),
                             MaxScore = 100,
                             Status = 0,
                             TaskDescription = "bahonalar o`tmaydi, hatto spravka ham",
@@ -144,31 +139,31 @@ namespace HakatonApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("CompletedTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FilePath")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("HomeWorkId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("ResultStatus")
-                        .HasColumnType("integer");
+                        .HasColumnType("INTEGER");
 
                     b.Property<int?>("Score")
-                        .HasColumnType("integer");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("StudentComment")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("TeacherComment")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -181,23 +176,23 @@ namespace HakatonApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1432ea34-0fc7-453b-9b28-d52e9d21f293"),
-                            HomeWorkId = new Guid("f86f9202-59c2-483e-9bdd-c06d3fb4b9f8"),
+                            Id = new Guid("ee13b56b-bbf7-4d10-9cd6-8ebf943142d8"),
+                            HomeWorkId = new Guid("36b7acb8-f524-4aa0-9d8f-cc3890ed30d8"),
                             ResultStatus = 3,
                             Score = 56,
                             StudentComment = "Cut the bullshit",
                             TeacherComment = "Men yorvorganman",
-                            UserId = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59")
+                            UserId = new Guid("eb970026-e187-4c1d-9895-0106ab63bb2f")
                         },
                         new
                         {
-                            Id = new Guid("32f2ec99-a29a-42ad-a5cc-6db32dedc0f4"),
-                            HomeWorkId = new Guid("46952c95-f2fa-478c-b344-98f9dfc6cf22"),
+                            Id = new Guid("403e874a-cee2-4139-bb9b-cca617befcae"),
+                            HomeWorkId = new Guid("2108aa9b-f62e-47e5-8e8e-5843549ffb9a"),
                             ResultStatus = 2,
                             Score = 96,
                             StudentComment = "In shaa Allah",
                             TeacherComment = "WOW",
-                            UserId = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59")
+                            UserId = new Guid("eb970026-e187-4c1d-9895-0106ab63bb2f")
                         });
                 });
 
@@ -205,19 +200,19 @@ namespace HakatonApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("NormalizedName")
                         .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -232,66 +227,66 @@ namespace HakatonApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("AccessFailedCount")
-                        .HasColumnType("integer");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("AvatarUrl")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("boolean");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("boolean");
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("boolean");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("SecurityStamp")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("boolean");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -307,9 +302,9 @@ namespace HakatonApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59"),
+                            Id = new Guid("eb970026-e187-4c1d-9895-0106ab63bb2f"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "033f859b-a478-4b08-ba8a-3acad082e8b0",
+                            ConcurrencyStamp = "49b9b015-b0b1-48dd-82c6-054640689e61",
                             EmailConfirmed = false,
                             FirstName = "Abdurauf",
                             LastName = "Makhammatov",
@@ -324,18 +319,16 @@ namespace HakatonApi.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("RoleId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -348,18 +341,16 @@ namespace HakatonApi.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -371,16 +362,16 @@ namespace HakatonApi.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ProviderDisplayName")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -392,10 +383,10 @@ namespace HakatonApi.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("RoleId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -407,16 +398,16 @@ namespace HakatonApi.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Value")
-                        .HasColumnType("text");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 

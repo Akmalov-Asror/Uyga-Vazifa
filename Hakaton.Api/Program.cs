@@ -9,7 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services._AddCors();
-builder.Services._AddDbContext(builder.Configuration.GetConnectionString("PostGres"));
+builder.Services._AddDbContext(builder.Configuration.GetConnectionString("Sqlite"));
 builder.Services._AddIdentity();
 builder._AddSerilogWithConfig();
 builder.Services._AddServicesViaAttribute();

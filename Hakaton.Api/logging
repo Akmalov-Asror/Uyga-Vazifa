@@ -6217,3 +6217,964 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13
 2022-12-18 18:56:11.685 +05:00 [INF] Executed action HakatonApi.Controllers.AccountController.SignUp (HakatonApi) in 3531.775ms
 2022-12-18 18:56:11.688 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.AccountController.SignUp (HakatonApi)'
 2022-12-18 18:56:11.700 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/Account/signup multipart/form-data;+boundary=----WebKitFormBoundaryGJg6o8FSUHrbpYIP 591323 - 200 - application/json;+charset=utf-8 3628.9898ms
+2022-12-18 19:49:58.976 +05:00 [INF] User profile is available. Using 'C:\Users\msi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-18 19:49:59.020 +05:00 [INF] Creating key {b2e61506-a067-4b04-af43-b076d468dbfa} with creation date 2022-12-18 14:49:59Z, activation date 2022-12-20 14:49:27Z, and expiration date 2023-03-18 14:49:58Z.
+2022-12-18 19:49:59.032 +05:00 [INF] Writing data to file 'C:\Users\msi\AppData\Local\ASP.NET\DataProtection-Keys\key-b2e61506-a067-4b04-af43-b076d468dbfa.xml'.
+2022-12-18 19:49:59.170 +05:00 [INF] Now listening on: https://localhost:7251
+2022-12-18 19:49:59.172 +05:00 [INF] Now listening on: http://localhost:5251
+2022-12-18 19:49:59.178 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-18 19:49:59.180 +05:00 [INF] Hosting environment: Development
+2022-12-18 19:49:59.181 +05:00 [INF] Content root path: D:\Uyga-Vazifa\Hakaton.Api\
+2022-12-18 19:49:59.798 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/index.html - -
+2022-12-18 19:50:00.055 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/index.html - - - 200 - text/html;charset=utf-8 261.0392ms
+2022-12-18 19:50:00.075 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - -
+2022-12-18 19:50:00.075 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - -
+2022-12-18 19:50:00.086 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 7.4083ms
+2022-12-18 19:50:00.107 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.1882ms
+2022-12-18 19:50:00.193 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - -
+2022-12-18 19:50:00.338 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 145.4343ms
+2022-12-18 19:50:24.735 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/api/Account/signup multipart/form-data;+boundary=----WebKitFormBoundaryowCYBQdjsmTug0Sz 229134
+2022-12-18 19:50:26.530 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 19:50:27.422 +05:00 [INF] Executed DbCommand (79ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."AvatarUrl", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FirstName", a."LastName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."Password", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__get_Item_0
+LIMIT 1
+2022-12-18 19:50:27.633 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2022-12-18 19:50:27.680 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2022-12-18 19:50:27.696 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.AccountController.SignUp (HakatonApi)'
+2022-12-18 19:50:27.723 +05:00 [INF] Route matched with {action = "SignUp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignUp(HakatonApi.Models.SignUpUserDto) on controller HakatonApi.Controllers.AccountController (HakatonApi).
+2022-12-18 19:50:27.994 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."AvatarUrl", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FirstName", a."LastName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."Password", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2022-12-18 19:50:28.148 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Boolean), @p6='?', @p7='?', @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTime), @p10='?', @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?', @p17='?' (DbType = Boolean), @p18='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "AvatarUrl", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2022-12-18 19:50:28.306 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2022-12-18 19:50:28.311 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2022-12-18 19:50:28.318 +05:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2022-12-18 19:50:28.385 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Boolean), @p6='?', @p7='?', @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTime), @p10='?', @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?', @p17='?' (DbType = Boolean), @p18='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "AvatarUrl", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2022-12-18 19:50:28.395 +05:00 [INF] Executing OkObjectResult, writing value of type 'HakatonApi.Entities.User'.
+2022-12-18 19:50:28.412 +05:00 [INF] Executed action HakatonApi.Controllers.AccountController.SignUp (HakatonApi) in 682.6516ms
+2022-12-18 19:50:28.415 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.AccountController.SignUp (HakatonApi)'
+2022-12-18 19:50:28.427 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/Account/signup multipart/form-data;+boundary=----WebKitFormBoundaryowCYBQdjsmTug0Sz 229134 - 200 - application/json;+charset=utf-8 3692.2843ms
+2022-12-18 19:51:17.719 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Api.Course multipart/form-data;+boundary=----WebKitFormBoundaryeGXDWlD54ubRGa3n 146
+2022-12-18 19:51:17.756 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.CourseController.CreateCourse (HakatonApi)'
+2022-12-18 19:51:17.765 +05:00 [INF] Route matched with {action = "CreateCourse", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCourse(HakatonApi.Models.CourseDtos.CreateCourseDto) on controller HakatonApi.Controllers.CourseController (HakatonApi).
+2022-12-18 19:51:17.807 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 19:51:17.812 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."AvatarUrl", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FirstName", a."LastName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."Password", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__get_Item_0
+LIMIT 1
+2022-12-18 19:51:17.887 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Courses" ("Id", "CourseName", "Key")
+VALUES (@p0, @p1, @p2);
+2022-12-18 19:51:17.898 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Boolean), @p6='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "CourseUsers" ("Id", "CourseId", "IsAdmin", "UserId")
+VALUES (@p3, @p4, @p5, @p6);
+2022-12-18 19:51:17.910 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Guid'.
+2022-12-18 19:51:17.912 +05:00 [INF] Executed action HakatonApi.Controllers.CourseController.CreateCourse (HakatonApi) in 144.3901ms
+2022-12-18 19:51:17.913 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.CourseController.CreateCourse (HakatonApi)'
+2022-12-18 19:51:17.915 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Api.Course multipart/form-data;+boundary=----WebKitFormBoundaryeGXDWlD54ubRGa3n 146 - 200 - application/json;+charset=utf-8 196.1756ms
+2022-12-18 19:54:47.444 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=a4899e8a-b970-4ec6-a066-472a5bda42e6 multipart/form-data;+boundary=----WebKitFormBoundaryis54m1mUU1AnH3UC 313468
+2022-12-18 19:54:47.507 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 19:54:47.513 +05:00 [INF] Route matched with {action = "CreateHomeWork", controller = "HomeWork"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateHomeWork(System.Guid, HakatonApi.Models.HomeWorkDtos.CreateHomeWorkDto) on controller HakatonApi.Controllers.HomeWorkController (HakatonApi).
+2022-12-18 19:54:47.567 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 19:54:47.624 +05:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?', @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (DbType = Int32), @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "HomeWorks" ("Id", "CourseId", "CreateDate", "EndDate", "FilePath", "MaxScore", "StartDate", "Status", "TaskDescription", "TaskName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2022-12-18 19:54:48.431 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'HakatonApi.DataBase.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ValidateAndBind(ConnectorTypeMapper typeMapper)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ValidateAndBind(ConnectorTypeMapper typeMapper)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-12-18 19:54:48.641 +05:00 [INF] Executed action HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi) in 1126.7545ms
+2022-12-18 19:54:48.645 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 19:54:48.706 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ValidateAndBind(ConnectorTypeMapper typeMapper)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at HakatonApi.DataBase.Repositories.GenericRepository`1.AddAsync(TEntity entity) in D:\Uyga-Vazifa\Hakaton.Api\DataBase\Repositories\GenericRepository.cs:line 23
+   at HakatonApi.Services.HomeWorkService.CreateHomeWork(Guid courseId, CreateHomeWorkDto createHomeWorkDto) in D:\Uyga-Vazifa\Hakaton.Api\Services\HomeWorkService.cs:line 35
+   at HakatonApi.Controllers.HomeWorkController.CreateHomeWork(Guid courseId, CreateHomeWorkDto createHomeWorkDto) in D:\Uyga-Vazifa\Hakaton.Api\Controllers\HomeWorkController.cs:line 20
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-18 19:54:48.720 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=a4899e8a-b970-4ec6-a066-472a5bda42e6 multipart/form-data;+boundary=----WebKitFormBoundaryis54m1mUU1AnH3UC 313468 - 500 - text/plain;+charset=utf-8 1276.7994ms
+2022-12-18 20:05:49.365 +05:00 [INF] User profile is available. Using 'C:\Users\msi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-18 20:05:49.543 +05:00 [INF] Now listening on: https://localhost:7251
+2022-12-18 20:05:49.545 +05:00 [INF] Now listening on: http://localhost:5251
+2022-12-18 20:05:49.552 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-18 20:05:49.554 +05:00 [INF] Hosting environment: Development
+2022-12-18 20:05:49.555 +05:00 [INF] Content root path: D:\Uyga-Vazifa\Hakaton.Api\
+2022-12-18 20:05:50.597 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/index.html - -
+2022-12-18 20:05:50.896 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/index.html - - - 200 - text/html;charset=utf-8 301.9647ms
+2022-12-18 20:05:50.914 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - -
+2022-12-18 20:05:50.914 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - -
+2022-12-18 20:05:50.922 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 7.8937ms
+2022-12-18 20:05:50.943 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.4656ms
+2022-12-18 20:05:51.025 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - -
+2022-12-18 20:05:51.169 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 143.4792ms
+2022-12-18 20:07:24.253 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/api/Account/signup multipart/form-data;+boundary=----WebKitFormBoundaryeDoOb9MS9YboT558 1902982
+2022-12-18 20:07:25.836 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.AccountController.SignUp (HakatonApi)'
+2022-12-18 20:07:25.953 +05:00 [INF] Route matched with {action = "SignUp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignUp(HakatonApi.Models.SignUpUserDto) on controller HakatonApi.Controllers.AccountController (HakatonApi).
+2022-12-18 20:07:28.324 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:07:30.124 +05:00 [INF] Executed DbCommand (329ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."AvatarUrl", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FirstName", a."LastName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."Password", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2022-12-18 20:07:31.300 +05:00 [INF] Executed DbCommand (70ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Boolean), @p6='?', @p7='?', @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTime), @p10='?', @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?', @p17='?' (DbType = Boolean), @p18='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "AvatarUrl", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2022-12-18 20:07:31.435 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2022-12-18 20:07:31.478 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2022-12-18 20:07:31.492 +05:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2022-12-18 20:07:31.535 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Boolean), @p6='?', @p7='?', @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTime), @p10='?', @p11='?', @p12='?', @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?', @p17='?' (DbType = Boolean), @p18='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "AvatarUrl", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2022-12-18 20:07:31.546 +05:00 [INF] Executing OkObjectResult, writing value of type 'HakatonApi.Entities.User'.
+2022-12-18 20:07:31.563 +05:00 [INF] Executed action HakatonApi.Controllers.AccountController.SignUp (HakatonApi) in 5596.0281ms
+2022-12-18 20:07:31.566 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.AccountController.SignUp (HakatonApi)'
+2022-12-18 20:07:31.577 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/Account/signup multipart/form-data;+boundary=----WebKitFormBoundaryeDoOb9MS9YboT558 1902982 - 200 - application/json;+charset=utf-8 7324.4764ms
+2022-12-18 20:07:45.965 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Api.Course multipart/form-data;+boundary=----WebKitFormBoundaryleyR6vKwnw8xur3T 147
+2022-12-18 20:07:45.973 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.CourseController.CreateCourse (HakatonApi)'
+2022-12-18 20:07:45.976 +05:00 [INF] Route matched with {action = "CreateCourse", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCourse(HakatonApi.Models.CourseDtos.CreateCourseDto) on controller HakatonApi.Controllers.CourseController (HakatonApi).
+2022-12-18 20:07:46.026 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:07:46.043 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."AvatarUrl", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FirstName", a."LastName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."Password", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE a."Id" = @__get_Item_0
+LIMIT 1
+2022-12-18 20:07:46.105 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Courses" ("Id", "CourseName", "Key")
+VALUES (@p0, @p1, @p2);
+2022-12-18 20:07:46.113 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Boolean), @p6='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "CourseUsers" ("Id", "CourseId", "IsAdmin", "UserId")
+VALUES (@p3, @p4, @p5, @p6);
+2022-12-18 20:07:46.120 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Guid'.
+2022-12-18 20:07:46.121 +05:00 [INF] Executed action HakatonApi.Controllers.CourseController.CreateCourse (HakatonApi) in 144.2107ms
+2022-12-18 20:07:46.122 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.CourseController.CreateCourse (HakatonApi)'
+2022-12-18 20:07:46.123 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Api.Course multipart/form-data;+boundary=----WebKitFormBoundaryleyR6vKwnw8xur3T 147 - 200 - application/json;+charset=utf-8 158.2899ms
+2022-12-18 20:08:22.013 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=25c54ecd-5e2e-4195-b74d-153467bedc8b multipart/form-data;+boundary=----WebKitFormBoundaryBkGgFIVBvWk9xXGV 204017
+2022-12-18 20:08:22.028 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:08:22.033 +05:00 [INF] Route matched with {action = "CreateHomeWork", controller = "HomeWork"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateHomeWork(System.Guid, HakatonApi.Models.HomeWorkDtos.CreateHomeWorkDto) on controller HakatonApi.Controllers.HomeWorkController (HakatonApi).
+2022-12-18 20:08:22.088 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-12-18 20:08:22.090 +05:00 [INF] Executed action HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi) in 56.5278ms
+2022-12-18 20:08:22.091 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:08:22.097 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=25c54ecd-5e2e-4195-b74d-153467bedc8b multipart/form-data;+boundary=----WebKitFormBoundaryBkGgFIVBvWk9xXGV 204017 - 400 - application/problem+json;+charset=utf-8 84.3839ms
+2022-12-18 20:09:46.131 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=25c54ecd-5e2e-4195-b74d-153467bedc8b multipart/form-data;+boundary=----WebKitFormBoundaryZK0ZnjS2EPZP2QoN 204031
+2022-12-18 20:09:46.143 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:09:46.145 +05:00 [INF] Route matched with {action = "CreateHomeWork", controller = "HomeWork"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateHomeWork(System.Guid, HakatonApi.Models.HomeWorkDtos.CreateHomeWorkDto) on controller HakatonApi.Controllers.HomeWorkController (HakatonApi).
+2022-12-18 20:09:59.780 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:09:59.827 +05:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?', @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (DbType = Int32), @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "HomeWorks" ("Id", "CourseId", "CreateDate", "EndDate", "FilePath", "MaxScore", "StartDate", "Status", "TaskDescription", "TaskName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2022-12-18 20:09:59.928 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'HakatonApi.DataBase.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ValidateAndBind(ConnectorTypeMapper typeMapper)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ValidateAndBind(ConnectorTypeMapper typeMapper)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-12-18 20:10:00.065 +05:00 [INF] Executed action HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi) in 13919.2877ms
+2022-12-18 20:10:00.067 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:10:00.123 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ValidateAndBind(ConnectorTypeMapper typeMapper)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at HakatonApi.DataBase.Repositories.GenericRepository`1.AddAsync(TEntity entity) in D:\Uyga-Vazifa\Hakaton.Api\DataBase\Repositories\GenericRepository.cs:line 23
+   at HakatonApi.Services.HomeWorkService.CreateHomeWork(Guid courseId, CreateHomeWorkDto createHomeWorkDto) in D:\Uyga-Vazifa\Hakaton.Api\Services\HomeWorkService.cs:line 35
+   at HakatonApi.Controllers.HomeWorkController.CreateHomeWork(Guid courseId, CreateHomeWorkDto createHomeWorkDto) in D:\Uyga-Vazifa\Hakaton.Api\Controllers\HomeWorkController.cs:line 20
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-18 20:10:00.133 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=25c54ecd-5e2e-4195-b74d-153467bedc8b multipart/form-data;+boundary=----WebKitFormBoundaryZK0ZnjS2EPZP2QoN 204031 - 500 - text/plain;+charset=utf-8 14004.5714ms
+2022-12-18 20:10:19.849 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=25c54ecd-5e2e-4195-b74d-153467bedc8b multipart/form-data;+boundary=----WebKitFormBoundaryiLL6mAPAJp2cqhmb 204031
+2022-12-18 20:10:19.884 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:10:19.886 +05:00 [INF] Route matched with {action = "CreateHomeWork", controller = "HomeWork"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateHomeWork(System.Guid, HakatonApi.Models.HomeWorkDtos.CreateHomeWorkDto) on controller HakatonApi.Controllers.HomeWorkController (HakatonApi).
+2022-12-18 20:10:27.472 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:10:39.306 +05:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?', @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (DbType = Int32), @p8='?', @p9='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "HomeWorks" ("Id", "CourseId", "CreateDate", "EndDate", "FilePath", "MaxScore", "StartDate", "Status", "TaskDescription", "TaskName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2022-12-18 20:10:39.398 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'HakatonApi.DataBase.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ValidateAndBind(ConnectorTypeMapper typeMapper)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ValidateAndBind(ConnectorTypeMapper typeMapper)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-12-18 20:10:39.591 +05:00 [INF] Executed action HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi) in 19704.149ms
+2022-12-18 20:10:39.592 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:10:39.599 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ValidateAndBind(ConnectorTypeMapper typeMapper)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at HakatonApi.DataBase.Repositories.GenericRepository`1.AddAsync(TEntity entity) in D:\Uyga-Vazifa\Hakaton.Api\DataBase\Repositories\GenericRepository.cs:line 23
+   at HakatonApi.Services.HomeWorkService.CreateHomeWork(Guid courseId, CreateHomeWorkDto createHomeWorkDto) in D:\Uyga-Vazifa\Hakaton.Api\Services\HomeWorkService.cs:line 35
+   at HakatonApi.Controllers.HomeWorkController.CreateHomeWork(Guid courseId, CreateHomeWorkDto createHomeWorkDto) in D:\Uyga-Vazifa\Hakaton.Api\Controllers\HomeWorkController.cs:line 20
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-18 20:10:39.607 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=25c54ecd-5e2e-4195-b74d-153467bedc8b multipart/form-data;+boundary=----WebKitFormBoundaryiLL6mAPAJp2cqhmb 204031 - 500 - text/plain;+charset=utf-8 19757.7790ms
+2022-12-18 20:35:25.542 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:36:01.929 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:36:34.022 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:37:45.464 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:37:54.205 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:39:23.617 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: using lazy loading proxies 
+2022-12-18 20:42:13.600 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:42:14.217 +05:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2022-12-18 20:42:14.419 +05:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2022-12-18 20:42:14.429 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2022-12-18 20:42:14.431 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-12-18 20:42:14.445 +05:00 [INF] Applying migration '20221218153745_Init'.
+2022-12-18 20:42:14.531 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoles" (
+    "Id" uuid NOT NULL CONSTRAINT "PK_AspNetRoles" PRIMARY KEY,
+    "Name" character varying(256) NULL,
+    "NormalizedName" character varying(256) NULL,
+    "ConcurrencyStamp" text NULL
+);
+2022-12-18 20:42:14.531 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUsers" (
+    "Id" uuid NOT NULL CONSTRAINT "PK_AspNetUsers" PRIMARY KEY,
+    "FirstName" text NULL,
+    "LastName" text NULL,
+    "Password" text NULL,
+    "AvatarUrl" text NULL,
+    "UserName" character varying(256) NULL,
+    "NormalizedUserName" character varying(256) NULL,
+    "Email" character varying(256) NULL,
+    "NormalizedEmail" character varying(256) NULL,
+    "EmailConfirmed" boolean NOT NULL,
+    "PasswordHash" text NULL,
+    "SecurityStamp" text NULL,
+    "ConcurrencyStamp" text NULL,
+    "PhoneNumber" text NULL,
+    "PhoneNumberConfirmed" boolean NOT NULL,
+    "TwoFactorEnabled" boolean NOT NULL,
+    "LockoutEnd" timestamp with time zone NULL,
+    "LockoutEnabled" boolean NOT NULL,
+    "AccessFailedCount" integer NOT NULL
+);
+2022-12-18 20:42:14.531 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Courses" (
+    "Id" uuid NOT NULL CONSTRAINT "PK_Courses" PRIMARY KEY,
+    "Key" uuid NOT NULL,
+    "CourseName" text NULL
+);
+2022-12-18 20:42:14.532 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoleClaims" (
+    "Id" integer NOT NULL CONSTRAINT "PK_AspNetRoleClaims" PRIMARY KEY,
+    "RoleId" uuid NOT NULL,
+    "ClaimType" text NULL,
+    "ClaimValue" text NULL,
+    CONSTRAINT "FK_AspNetRoleClaims_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:42:15.255 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserClaims" (
+    "Id" integer NOT NULL CONSTRAINT "PK_AspNetUserClaims" PRIMARY KEY,
+    "UserId" uuid NOT NULL,
+    "ClaimType" text NULL,
+    "ClaimValue" text NULL,
+    CONSTRAINT "FK_AspNetUserClaims_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:42:15.255 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserLogins" (
+    "LoginProvider" text NOT NULL,
+    "ProviderKey" text NOT NULL,
+    "ProviderDisplayName" text NULL,
+    "UserId" uuid NOT NULL,
+    CONSTRAINT "PK_AspNetUserLogins" PRIMARY KEY ("LoginProvider", "ProviderKey"),
+    CONSTRAINT "FK_AspNetUserLogins_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:42:16.989 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserRoles" (
+    "UserId" uuid NOT NULL,
+    "RoleId" uuid NOT NULL,
+    CONSTRAINT "PK_AspNetUserRoles" PRIMARY KEY ("UserId", "RoleId"),
+    CONSTRAINT "FK_AspNetUserRoles_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_AspNetUserRoles_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:42:16.990 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserTokens" (
+    "UserId" uuid NOT NULL,
+    "LoginProvider" text NOT NULL,
+    "Name" text NOT NULL,
+    "Value" text NULL,
+    CONSTRAINT "PK_AspNetUserTokens" PRIMARY KEY ("UserId", "LoginProvider", "Name"),
+    CONSTRAINT "FK_AspNetUserTokens_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:42:16.990 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "CourseUsers" (
+    "Id" uuid NOT NULL CONSTRAINT "PK_CourseUsers" PRIMARY KEY,
+    "IsAdmin" boolean NOT NULL,
+    "UserId" uuid NOT NULL,
+    "CourseId" uuid NOT NULL,
+    CONSTRAINT "FK_CourseUsers_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_CourseUsers_Courses_CourseId" FOREIGN KEY ("CourseId") REFERENCES "Courses" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:42:19.157 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "HomeWorks" (
+    "Id" uuid NOT NULL CONSTRAINT "PK_HomeWorks" PRIMARY KEY,
+    "TaskName" text NULL,
+    "TaskDescription" text NULL,
+    "MaxScore" integer NOT NULL,
+    "Status" integer NOT NULL,
+    "FilePath" text NULL,
+    "CreateDate" timestamp with time zone NULL,
+    "StartDate" timestamp with time zone NULL,
+    "EndDate" timestamp with time zone NULL,
+    "CourseId" uuid NOT NULL,
+    CONSTRAINT "FK_HomeWorks_Courses_CourseId" FOREIGN KEY ("CourseId") REFERENCES "Courses" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:42:20.398 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Result" (
+    "Id" uuid NOT NULL CONSTRAINT "PK_Result" PRIMARY KEY,
+    "StudentComment" text NULL,
+    "TeacherComment" text NULL,
+    "Score" integer NULL,
+    "ResultStatus" integer NOT NULL,
+    "CompletedTime" timestamp with time zone NULL,
+    "FilePath" text NULL,
+    "UserId" uuid NOT NULL,
+    "HomeWorkId" uuid NOT NULL,
+    CONSTRAINT "FK_Result_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_Result_HomeWorks_HomeWorkId" FOREIGN KEY ("HomeWorkId") REFERENCES "HomeWorks" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:42:20.399 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "AvatarUrl", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES ('EB9F5CF8-D023-4E3A-AB88-9D1179689589', 0, NULL, 'f65f41d6-a195-469a-89ee-2c6e68dc48a4', NULL, 0, 'Abdurauf', 'Makhammatov', 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, 'Abdurauf');
+2022-12-18 20:42:20.399 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Courses" ("Id", "CourseName", "Key")
+VALUES ('761B07D8-961C-4BFC-A387-02B6ADF40FD1', 'firstRoom', 'B71D00AE-1F5B-4DFD-BF55-9D05C131D98C');
+2022-12-18 20:42:22.635 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "CourseUsers" ("Id", "CourseId", "IsAdmin", "UserId")
+VALUES ('064F1786-4616-477C-B2BF-987614254E8A', '761B07D8-961C-4BFC-A387-02B6ADF40FD1', 1, 'EB9F5CF8-D023-4E3A-AB88-9D1179689589');
+2022-12-18 20:42:22.636 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "HomeWorks" ("Id", "CourseId", "CreateDate", "EndDate", "FilePath", "MaxScore", "StartDate", "Status", "TaskDescription", "TaskName")
+VALUES ('04C5FC6B-591A-46E9-930A-9193FA80E05B', '761B07D8-961C-4BFC-A387-02B6ADF40FD1', NULL, NULL, NULL, 100, NULL, 0, 'bahonalar o`tmaydi, hatto spravka ham', '50 ta listga referat yozib keling');
+INSERT INTO "HomeWorks" ("Id", "CourseId", "CreateDate", "EndDate", "FilePath", "MaxScore", "StartDate", "Status", "TaskDescription", "TaskName")
+VALUES ('EAAC605F-299B-456D-8997-C9C894FB91B8', '761B07D8-961C-4BFC-A387-02B6ADF40FD1', NULL, NULL, NULL, 100, NULL, 0, 'bahonalar o`tmaydi, hatto spravka ham', '50 ta listga referat yozib keling');
+2022-12-18 20:42:23.716 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Result" ("Id", "CompletedTime", "FilePath", "HomeWorkId", "ResultStatus", "Score", "StudentComment", "TeacherComment", "UserId")
+VALUES ('1E728BFA-807B-4A35-BCFA-36C1D7650C4B', NULL, NULL, '04C5FC6B-591A-46E9-930A-9193FA80E05B', 2, 96, 'In shaa Allah', 'WOW', 'EB9F5CF8-D023-4E3A-AB88-9D1179689589');
+INSERT INTO "Result" ("Id", "CompletedTime", "FilePath", "HomeWorkId", "ResultStatus", "Score", "StudentComment", "TeacherComment", "UserId")
+VALUES ('69F9639A-4CBD-4B46-BD4A-2E3D80D72EF1', NULL, NULL, 'EAAC605F-299B-456D-8997-C9C894FB91B8', 3, 56, 'Cut the bullshit', 'Men yorvorganman', 'EB9F5CF8-D023-4E3A-AB88-9D1179689589');
+2022-12-18 20:42:23.716 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetRoleClaims_RoleId" ON "AspNetRoleClaims" ("RoleId");
+2022-12-18 20:42:23.716 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "RoleNameIndex" ON "AspNetRoles" ("NormalizedName");
+2022-12-18 20:42:23.716 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserClaims_UserId" ON "AspNetUserClaims" ("UserId");
+2022-12-18 20:42:24.798 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserLogins_UserId" ON "AspNetUserLogins" ("UserId");
+2022-12-18 20:42:24.799 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserRoles_RoleId" ON "AspNetUserRoles" ("RoleId");
+2022-12-18 20:42:24.800 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "EmailIndex" ON "AspNetUsers" ("NormalizedEmail");
+2022-12-18 20:42:24.800 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UserNameIndex" ON "AspNetUsers" ("NormalizedUserName");
+2022-12-18 20:42:24.801 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_CourseUsers_CourseId" ON "CourseUsers" ("CourseId");
+2022-12-18 20:42:24.802 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_CourseUsers_UserId" ON "CourseUsers" ("UserId");
+2022-12-18 20:42:24.802 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_HomeWorks_CourseId" ON "HomeWorks" ("CourseId");
+2022-12-18 20:42:25.778 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Result_HomeWorkId" ON "Result" ("HomeWorkId");
+2022-12-18 20:42:25.779 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Result_UserId" ON "Result" ("UserId");
+2022-12-18 20:42:25.779 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20221218153745_Init', '6.0.11');
+2022-12-18 20:42:58.219 +05:00 [INF] User profile is available. Using 'C:\Users\msi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-18 20:42:59.225 +05:00 [INF] Now listening on: https://localhost:7251
+2022-12-18 20:42:59.227 +05:00 [INF] Now listening on: http://localhost:5251
+2022-12-18 20:42:59.234 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-18 20:42:59.237 +05:00 [INF] Hosting environment: Development
+2022-12-18 20:42:59.239 +05:00 [INF] Content root path: D:\Uyga-Vazifa\Hakaton.Api\
+2022-12-18 20:43:00.423 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/index.html - -
+2022-12-18 20:43:00.841 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/index.html - - - 200 - text/html;charset=utf-8 421.5637ms
+2022-12-18 20:43:00.859 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - -
+2022-12-18 20:43:00.859 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - -
+2022-12-18 20:43:00.867 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/swagger-ui-bundle.js - -
+2022-12-18 20:43:00.868 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 8.8004ms
+2022-12-18 20:43:00.867 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/swagger-ui-standalone-preset.js - -
+2022-12-18 20:43:00.909 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - -
+2022-12-18 20:43:00.913 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 4.1631ms
+2022-12-18 20:43:00.950 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 90.7419ms
+2022-12-18 20:43:00.977 +05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-12-18 20:43:00.978 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 111.2052ms
+2022-12-18 20:43:01.020 +05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-12-18 20:43:01.021 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 154.0622ms
+2022-12-18 20:43:01.026 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - -
+2022-12-18 20:43:01.204 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 177.8647ms
+2022-12-18 20:43:47.624 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:44:01.389 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:44:01.724 +05:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2022-12-18 20:44:01.732 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2022-12-18 20:44:01.741 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-12-18 20:44:01.758 +05:00 [INF] Applying migration '20221218154347_Init'.
+2022-12-18 20:44:01.849 +05:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoles" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetRoles" PRIMARY KEY,
+    "Name" TEXT NULL,
+    "NormalizedName" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL
+);
+2022-12-18 20:44:22.760 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:44:26.696 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:44:43.254 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:44:49.917 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:44:58.989 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:44:59.229 +05:00 [INF] Executed DbCommand (127ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2022-12-18 20:44:59.502 +05:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2022-12-18 20:44:59.519 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2022-12-18 20:44:59.521 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2022-12-18 20:44:59.536 +05:00 [INF] Applying migration '20221218154451_Init'.
+2022-12-18 20:44:59.585 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoles" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetRoles" PRIMARY KEY,
+    "Name" TEXT NULL,
+    "NormalizedName" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL
+);
+2022-12-18 20:44:59.585 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUsers" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetUsers" PRIMARY KEY,
+    "FirstName" TEXT NULL,
+    "LastName" TEXT NULL,
+    "Password" TEXT NULL,
+    "AvatarUrl" TEXT NULL,
+    "UserName" TEXT NULL,
+    "NormalizedUserName" TEXT NULL,
+    "Email" TEXT NULL,
+    "NormalizedEmail" TEXT NULL,
+    "EmailConfirmed" INTEGER NOT NULL,
+    "PasswordHash" TEXT NULL,
+    "SecurityStamp" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL,
+    "PhoneNumber" TEXT NULL,
+    "PhoneNumberConfirmed" INTEGER NOT NULL,
+    "TwoFactorEnabled" INTEGER NOT NULL,
+    "LockoutEnd" TEXT NULL,
+    "LockoutEnabled" INTEGER NOT NULL,
+    "AccessFailedCount" INTEGER NOT NULL
+);
+2022-12-18 20:44:59.657 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Courses" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_Courses" PRIMARY KEY,
+    "Key" TEXT NOT NULL,
+    "CourseName" TEXT NULL
+);
+2022-12-18 20:44:59.657 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoleClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetRoleClaims" PRIMARY KEY AUTOINCREMENT,
+    "RoleId" TEXT NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetRoleClaims_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:44:59.658 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetUserClaims" PRIMARY KEY AUTOINCREMENT,
+    "UserId" TEXT NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetUserClaims_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:45:02.102 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserLogins" (
+    "LoginProvider" TEXT NOT NULL,
+    "ProviderKey" TEXT NOT NULL,
+    "ProviderDisplayName" TEXT NULL,
+    "UserId" TEXT NOT NULL,
+    CONSTRAINT "PK_AspNetUserLogins" PRIMARY KEY ("LoginProvider", "ProviderKey"),
+    CONSTRAINT "FK_AspNetUserLogins_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:45:02.103 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserRoles" (
+    "UserId" TEXT NOT NULL,
+    "RoleId" TEXT NOT NULL,
+    CONSTRAINT "PK_AspNetUserRoles" PRIMARY KEY ("UserId", "RoleId"),
+    CONSTRAINT "FK_AspNetUserRoles_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_AspNetUserRoles_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:45:04.428 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserTokens" (
+    "UserId" TEXT NOT NULL,
+    "LoginProvider" TEXT NOT NULL,
+    "Name" TEXT NOT NULL,
+    "Value" TEXT NULL,
+    CONSTRAINT "PK_AspNetUserTokens" PRIMARY KEY ("UserId", "LoginProvider", "Name"),
+    CONSTRAINT "FK_AspNetUserTokens_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:45:04.429 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "CourseUsers" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_CourseUsers" PRIMARY KEY,
+    "IsAdmin" INTEGER NOT NULL,
+    "UserId" TEXT NOT NULL,
+    "CourseId" TEXT NOT NULL,
+    CONSTRAINT "FK_CourseUsers_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_CourseUsers_Courses_CourseId" FOREIGN KEY ("CourseId") REFERENCES "Courses" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:45:06.128 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "HomeWorks" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_HomeWorks" PRIMARY KEY,
+    "TaskName" TEXT NULL,
+    "TaskDescription" TEXT NULL,
+    "MaxScore" INTEGER NOT NULL,
+    "Status" INTEGER NOT NULL,
+    "FilePath" TEXT NULL,
+    "CreateDate" TEXT NULL,
+    "StartDate" TEXT NULL,
+    "EndDate" TEXT NULL,
+    "CourseId" TEXT NOT NULL,
+    CONSTRAINT "FK_HomeWorks_Courses_CourseId" FOREIGN KEY ("CourseId") REFERENCES "Courses" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:45:06.131 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Result" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_Result" PRIMARY KEY,
+    "StudentComment" TEXT NULL,
+    "TeacherComment" TEXT NULL,
+    "Score" INTEGER NULL,
+    "ResultStatus" INTEGER NOT NULL,
+    "CompletedTime" TEXT NULL,
+    "FilePath" TEXT NULL,
+    "UserId" TEXT NOT NULL,
+    "HomeWorkId" TEXT NOT NULL,
+    CONSTRAINT "FK_Result_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_Result_HomeWorks_HomeWorkId" FOREIGN KEY ("HomeWorkId") REFERENCES "HomeWorks" ("Id") ON DELETE CASCADE
+);
+2022-12-18 20:45:07.902 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "AvatarUrl", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES ('EB970026-E187-4C1D-9895-0106AB63BB2F', 0, NULL, '49b9b015-b0b1-48dd-82c6-054640689e61', NULL, 0, 'Abdurauf', 'Makhammatov', 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, 'Abdurauf');
+2022-12-18 20:45:07.903 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Courses" ("Id", "CourseName", "Key")
+VALUES ('C6CD0D71-6C4E-4C8D-BFDB-219FA1F7E6BE', 'firstRoom', 'EEFB30F9-8645-4FC9-BF11-D25ADAAB181A');
+2022-12-18 20:45:07.903 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "CourseUsers" ("Id", "CourseId", "IsAdmin", "UserId")
+VALUES ('F6212935-EAA5-442C-BFCB-C36366EB5A11', 'C6CD0D71-6C4E-4C8D-BFDB-219FA1F7E6BE', 1, 'EB970026-E187-4C1D-9895-0106AB63BB2F');
+2022-12-18 20:45:07.903 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "HomeWorks" ("Id", "CourseId", "CreateDate", "EndDate", "FilePath", "MaxScore", "StartDate", "Status", "TaskDescription", "TaskName")
+VALUES ('2108AA9B-F62E-47E5-8E8E-5843549FFB9A', 'C6CD0D71-6C4E-4C8D-BFDB-219FA1F7E6BE', NULL, NULL, NULL, 100, NULL, 0, 'bahonalar o`tmaydi, hatto spravka ham', '50 ta listga referat yozib keling');
+2022-12-18 20:45:10.848 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "HomeWorks" ("Id", "CourseId", "CreateDate", "EndDate", "FilePath", "MaxScore", "StartDate", "Status", "TaskDescription", "TaskName")
+VALUES ('36B7ACB8-F524-4AA0-9D8F-CC3890ED30D8', 'C6CD0D71-6C4E-4C8D-BFDB-219FA1F7E6BE', NULL, NULL, NULL, 100, NULL, 0, 'bahonalar o`tmaydi, hatto spravka ham', '50 ta listga referat yozib keling');
+2022-12-18 20:45:10.849 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Result" ("Id", "CompletedTime", "FilePath", "HomeWorkId", "ResultStatus", "Score", "StudentComment", "TeacherComment", "UserId")
+VALUES ('403E874A-CEE2-4139-BB9B-CCA617BEFCAE', NULL, NULL, '2108AA9B-F62E-47E5-8E8E-5843549FFB9A', 2, 96, 'In shaa Allah', 'WOW', 'EB970026-E187-4C1D-9895-0106AB63BB2F');
+2022-12-18 20:45:10.850 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Result" ("Id", "CompletedTime", "FilePath", "HomeWorkId", "ResultStatus", "Score", "StudentComment", "TeacherComment", "UserId")
+VALUES ('EE13B56B-BBF7-4D10-9CD6-8EBF943142D8', NULL, NULL, '36B7ACB8-F524-4AA0-9D8F-CC3890ED30D8', 3, 56, 'Cut the bullshit', 'Men yorvorganman', 'EB970026-E187-4C1D-9895-0106AB63BB2F');
+2022-12-18 20:45:12.377 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetRoleClaims_RoleId" ON "AspNetRoleClaims" ("RoleId");
+2022-12-18 20:45:12.378 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "RoleNameIndex" ON "AspNetRoles" ("NormalizedName");
+2022-12-18 20:45:12.379 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserClaims_UserId" ON "AspNetUserClaims" ("UserId");
+2022-12-18 20:45:12.380 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserLogins_UserId" ON "AspNetUserLogins" ("UserId");
+2022-12-18 20:45:12.381 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserRoles_RoleId" ON "AspNetUserRoles" ("RoleId");
+2022-12-18 20:45:12.382 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "EmailIndex" ON "AspNetUsers" ("NormalizedEmail");
+2022-12-18 20:45:13.052 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UserNameIndex" ON "AspNetUsers" ("NormalizedUserName");
+2022-12-18 20:45:13.052 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_CourseUsers_CourseId" ON "CourseUsers" ("CourseId");
+2022-12-18 20:45:13.052 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_CourseUsers_UserId" ON "CourseUsers" ("UserId");
+2022-12-18 20:45:13.053 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_HomeWorks_CourseId" ON "HomeWorks" ("CourseId");
+2022-12-18 20:45:13.053 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Result_HomeWorkId" ON "Result" ("HomeWorkId");
+2022-12-18 20:45:13.053 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Result_UserId" ON "Result" ("UserId");
+2022-12-18 20:45:13.053 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20221218154451_Init', '6.0.11');
+2022-12-18 20:45:24.613 +05:00 [INF] User profile is available. Using 'C:\Users\msi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-18 20:45:24.847 +05:00 [INF] Now listening on: https://localhost:7251
+2022-12-18 20:45:24.849 +05:00 [INF] Now listening on: http://localhost:5251
+2022-12-18 20:45:24.855 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-18 20:45:24.857 +05:00 [INF] Hosting environment: Development
+2022-12-18 20:45:24.858 +05:00 [INF] Content root path: D:\Uyga-Vazifa\Hakaton.Api\
+2022-12-18 20:45:25.625 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/index.html - -
+2022-12-18 20:45:25.989 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/index.html - - - 200 - text/html;charset=utf-8 368.2914ms
+2022-12-18 20:45:26.012 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - -
+2022-12-18 20:45:26.012 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - -
+2022-12-18 20:45:26.020 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 7.7466ms
+2022-12-18 20:45:26.047 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.6028ms
+2022-12-18 20:45:26.136 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - -
+2022-12-18 20:45:26.290 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 153.7859ms
+2022-12-18 20:45:51.278 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/api/Account/signup multipart/form-data;+boundary=----WebKitFormBoundaryGEvbf0QBBBaJ5H9g 203917
+2022-12-18 20:45:52.875 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:45:53.510 +05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."AvatarUrl", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."Password", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+LIMIT 1
+2022-12-18 20:45:53.545 +05:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2022-12-18 20:45:53.548 +05:00 [INF] AuthenticationScheme: Identity.External signed out.
+2022-12-18 20:45:53.549 +05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2022-12-18 20:45:53.553 +05:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2022-12-18 20:45:53.558 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.AccountController.SignUp (HakatonApi)'
+2022-12-18 20:45:53.583 +05:00 [INF] Route matched with {action = "SignUp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignUp(HakatonApi.Models.SignUpUserDto) on controller HakatonApi.Controllers.AccountController (HakatonApi).
+2022-12-18 20:45:54.067 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."AvatarUrl", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."Password", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2022-12-18 20:45:54.282 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?', @p3='?' (Size = 36), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 5), @p7='?' (Size = 5), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?', @p11='?' (Size = 5), @p12='?' (Size = 6), @p13='?' (Size = 84), @p14='?', @p15='?' (DbType = Boolean), @p16='?' (Size = 32), @p17='?' (DbType = Boolean), @p18='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "AvatarUrl", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2022-12-18 20:45:54.428 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0
+2022-12-18 20:45:54.460 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2022-12-18 20:45:54.466 +05:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2022-12-18 20:45:54.500 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 36), @p4='?', @p5='?' (DbType = Boolean), @p6='?' (Size = 5), @p7='?' (Size = 5), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?', @p11='?', @p12='?' (Size = 6), @p13='?', @p14='?', @p15='?' (DbType = Boolean), @p16='?', @p17='?' (DbType = Boolean), @p18='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "AvatarUrl", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2022-12-18 20:45:54.534 +05:00 [INF] Executing OkObjectResult, writing value of type 'HakatonApi.Entities.User'.
+2022-12-18 20:45:54.553 +05:00 [INF] Executed action HakatonApi.Controllers.AccountController.SignUp (HakatonApi) in 962.9518ms
+2022-12-18 20:45:54.557 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.AccountController.SignUp (HakatonApi)'
+2022-12-18 20:45:54.570 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/Account/signup multipart/form-data;+boundary=----WebKitFormBoundaryGEvbf0QBBBaJ5H9g 203917 - 200 - application/json;+charset=utf-8 3292.4051ms
+2022-12-18 20:47:30.191 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Api.Course multipart/form-data;+boundary=----WebKitFormBoundaryVZNGPdDaEDk1yeaZ 152
+2022-12-18 20:47:30.213 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.CourseController.CreateCourse (HakatonApi)'
+2022-12-18 20:47:30.219 +05:00 [INF] Route matched with {action = "CreateCourse", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCourse(HakatonApi.Models.CourseDtos.CreateCourseDto) on controller HakatonApi.Controllers.CourseController (HakatonApi).
+2022-12-18 20:47:30.262 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:47:30.269 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."AvatarUrl", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."Password", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+LIMIT 1
+2022-12-18 20:47:30.321 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 11), @p2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Courses" ("Id", "CourseName", "Key")
+VALUES (@p0, @p1, @p2);
+2022-12-18 20:47:30.325 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Boolean), @p6='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "CourseUsers" ("Id", "CourseId", "IsAdmin", "UserId")
+VALUES (@p3, @p4, @p5, @p6);
+2022-12-18 20:47:30.742 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Guid'.
+2022-12-18 20:47:30.745 +05:00 [INF] Executed action HakatonApi.Controllers.CourseController.CreateCourse (HakatonApi) in 524.8711ms
+2022-12-18 20:47:30.746 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.CourseController.CreateCourse (HakatonApi)'
+2022-12-18 20:47:30.747 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Api.Course multipart/form-data;+boundary=----WebKitFormBoundaryVZNGPdDaEDk1yeaZ 152 - 200 - application/json;+charset=utf-8 555.5348ms
+2022-12-18 20:47:45.024 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Api.Course/courseId?courseId=0be877c7-899a-47d9-bc9d-47a0a52833b8 - -
+2022-12-18 20:47:45.035 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.CourseController.GetCourseById (HakatonApi)'
+2022-12-18 20:47:45.038 +05:00 [INF] Route matched with {action = "GetCourseById", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCourseById(System.Guid) on controller HakatonApi.Controllers.CourseController (HakatonApi).
+2022-12-18 20:47:45.056 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:47:45.074 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CourseName", "c"."Key"
+FROM "Courses" AS "c"
+WHERE "c"."Id" = @__get_Item_0
+LIMIT 1
+2022-12-18 20:47:45.083 +05:00 [INF] Executing OkObjectResult, writing value of type 'HakatonApi.Models.CourseDtos.CourseView'.
+2022-12-18 20:47:45.084 +05:00 [INF] Executed action HakatonApi.Controllers.CourseController.GetCourseById (HakatonApi) in 45.33ms
+2022-12-18 20:47:45.085 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.CourseController.GetCourseById (HakatonApi)'
+2022-12-18 20:47:45.086 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Api.Course/courseId?courseId=0be877c7-899a-47d9-bc9d-47a0a52833b8 - - - 200 - application/json;+charset=utf-8 62.1184ms
+2022-12-18 20:48:02.749 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Api.Course/members?courseId=0be877c7-899a-47d9-bc9d-47a0a52833b8 - -
+2022-12-18 20:48:02.762 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.CourseController.GetCourseMembers (HakatonApi)'
+2022-12-18 20:48:02.767 +05:00 [INF] Route matched with {action = "GetCourseMembers", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCourseMembers(System.Guid) on controller HakatonApi.Controllers.CourseController (HakatonApi).
+2022-12-18 20:48:02.773 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:48:02.777 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CourseName", "c"."Key"
+FROM "Courses" AS "c"
+WHERE "c"."Id" = @__get_Item_0
+LIMIT 1
+2022-12-18 20:48:02.804 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CourseId", "c"."IsAdmin", "c"."UserId"
+FROM "CourseUsers" AS "c"
+WHERE "c"."CourseId" = @__get_Item_0
+2022-12-18 20:48:02.813 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."AvatarUrl", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."Password", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__get_Item_0
+2022-12-18 20:48:02.818 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[HakatonApi.Entities.User, HakatonApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-18 20:48:02.825 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT "r"."Id", "r"."CompletedTime", "r"."FilePath", "r"."HomeWorkId", "r"."ResultStatus", "r"."Score", "r"."StudentComment", "r"."TeacherComment", "r"."UserId"
+FROM "Result" AS "r"
+WHERE "r"."UserId" = @__get_Item_0
+2022-12-18 20:48:02.836 +05:00 [INF] Executed action HakatonApi.Controllers.CourseController.GetCourseMembers (HakatonApi) in 65.9773ms
+2022-12-18 20:48:02.837 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.CourseController.GetCourseMembers (HakatonApi)'
+2022-12-18 20:48:02.838 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Api.Course/members?courseId=0be877c7-899a-47d9-bc9d-47a0a52833b8 - - - 200 - application/json;+charset=utf-8 89.0123ms
+2022-12-18 20:49:09.944 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=0be877c7-899a-47d9-bc9d-47a0a52833b8 multipart/form-data;+boundary=----WebKitFormBoundaryZsWbDlYLeWamVyvC 265492
+2022-12-18 20:49:09.952 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:49:09.956 +05:00 [INF] Route matched with {action = "CreateHomeWork", controller = "HomeWork"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateHomeWork(System.Guid, HakatonApi.Models.HomeWorkDtos.CreateHomeWorkDto) on controller HakatonApi.Controllers.HomeWorkController (HakatonApi).
+2022-12-18 20:49:10.020 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-12-18 20:49:10.023 +05:00 [INF] Executed action HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi) in 65.6005ms
+2022-12-18 20:49:10.024 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:49:10.031 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=0be877c7-899a-47d9-bc9d-47a0a52833b8 multipart/form-data;+boundary=----WebKitFormBoundaryZsWbDlYLeWamVyvC 265492 - 400 - application/problem+json;+charset=utf-8 87.4164ms
+2022-12-18 20:50:14.101 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=0be877c7-899a-47d9-bc9d-47a0a52833b8 multipart/form-data;+boundary=----WebKitFormBoundaryP5pTNp5SMOu5fbpO 265493
+2022-12-18 20:50:14.106 +05:00 [INF] Executing endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:50:14.107 +05:00 [INF] Route matched with {action = "CreateHomeWork", controller = "HomeWork"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateHomeWork(System.Guid, HakatonApi.Models.HomeWorkDtos.CreateHomeWorkDto) on controller HakatonApi.Controllers.HomeWorkController (HakatonApi).
+2022-12-18 20:50:31.438 +05:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: using lazy loading proxies 
+2022-12-18 20:50:31.667 +05:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?' (Size = 36), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?' (DbType = Int32), @p8='?' (Size = 20), @p9='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "HomeWorks" ("Id", "CourseId", "CreateDate", "EndDate", "FilePath", "MaxScore", "StartDate", "Status", "TaskDescription", "TaskName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2022-12-18 20:50:36.818 +05:00 [INF] Executing OkObjectResult, writing value of type 'HakatonApi.Models.HomeWorkDtos.HomeWorkView'.
+2022-12-18 20:50:40.055 +05:00 [INF] Executed action HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi) in 25947.2773ms
+2022-12-18 20:50:40.062 +05:00 [INF] Executed endpoint 'HakatonApi.Controllers.HomeWorkController.CreateHomeWork (HakatonApi)'
+2022-12-18 20:50:40.067 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7251/api/HomeWork?courseId=0be877c7-899a-47d9-bc9d-47a0a52833b8 multipart/form-data;+boundary=----WebKitFormBoundaryP5pTNp5SMOu5fbpO 265493 - 200 - application/json;+charset=utf-8 25966.7219ms
