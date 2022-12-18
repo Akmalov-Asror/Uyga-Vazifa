@@ -7,6 +7,18 @@
 <MudTextField @bind-Value="TextValue" Label="First Name" Variant="Variant.Filled" Margin="Margin.Dense" Style="width: 30%; background-color: white;" />
 <MudTextField @bind-Value="TextValue" Label="Last Name" Variant="Variant.Filled" Margin="Margin.Dense" Style="width: 30%; background-color: white;" />
 <MudTextField @bind-Value="Password" Label="Password" Variant="Variant.Filled" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="ButtonTestclick" AdornmentAriaLabel="Show Password" Style="width: 30%; background-color: white;" />
+<MudTextField @bind-Value="Password" Label="ConfirmPassword" Variant="Variant.Filled" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="ButtonTestclick" AdornmentAriaLabel="ConfirmPassword" Style="width: 30%; background-color: white;" />
+<MudTextField @bind-Value="TextValue" Label="Email" Variant="Variant.Filled" Margin="Margin.Dense" Style="width: 30%; background-color: white;" />
+
+<div class="studentFiles">
+    <div class="files">
+        <input type="file" id="myFile" name="filename">
+        <p style="margin-top: 10px;">
+            Avatar
+        </p>
+    </div>
+</div>
+
 <MudButton Color="Color.Primary" Variant="Variant.Filled" Style="margin-top: 10px">Submit</MudButton>
 
 @code {

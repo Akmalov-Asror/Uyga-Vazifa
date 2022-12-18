@@ -7206,3 +7206,20 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
 2022-12-18 21:26:19.293 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.2237ms
 2022-12-18 21:26:19.407 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - -
 2022-12-18 21:26:19.572 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.3683ms
+2022-12-18 21:33:08.300 +03:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-18 21:33:09.839 +03:00 [INF] Now listening on: https://localhost:7251
+2022-12-18 21:33:09.849 +03:00 [INF] Now listening on: http://localhost:5251
+2022-12-18 21:33:09.881 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-18 21:33:09.900 +03:00 [INF] Hosting environment: Development
+2022-12-18 21:33:09.913 +03:00 [INF] Content root path: D:\Uyga-Vazifa\Hakaton.Api\
+2022-12-18 21:33:15.764 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/index.html - -
+2022-12-18 21:33:19.759 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/index.html - - - 200 - text/html;charset=utf-8 4003.9716ms
+2022-12-18 21:33:19.967 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - -
+2022-12-18 21:33:19.979 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - -
+2022-12-18 21:33:20.018 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 51.1665ms
+2022-12-18 21:33:20.716 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/favicon-16x16.png - -
+2022-12-18 21:33:20.798 +03:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2022-12-18 21:33:20.889 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/favicon-16x16.png - - - 0 665 image/png 172.6050ms
+2022-12-18 21:33:20.933 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 954.4016ms
+2022-12-18 21:33:21.257 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - -
+2022-12-18 21:33:21.999 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7251/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 742.0087ms
