@@ -4,12 +4,14 @@ using HakatonApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using HakatonApi.Filters;
 
 namespace HakatonApi.Controllers;
 
 [Route("Api.[controller]")]
 [ApiController]
 [Authorize]
+[ValidateModel]
 public class CourseController : ControllerBase
 {
     private readonly ICourseService courseService;
@@ -50,6 +52,7 @@ public class CourseController : ControllerBase
 
     [HttpDelete]
     [ProducesResponseType(StatusCodes.Status200OK)]
+    [TypeFilter(typeof(IsCourseExistsActionFilterAttribute))]
     public async Task<IActionResult> DeleteCourse(Guid courseId)
     {
         await courseService.DeleteCourse(courseId);
@@ -58,6 +61,7 @@ public class CourseController : ControllerBase
 
     [HttpGet("members")]
     [ProducesResponseType(typeof(List<User>), StatusCodes.Status200OK)]
+    [TypeFilter(typeof(IsCourseExistsActionFilterAttribute))]
     public async Task<IActionResult> GetCourseMembers(Guid courseId)
     {
         var members = await courseService.GetCourseMembers(courseId);

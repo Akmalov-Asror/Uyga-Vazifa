@@ -1,4 +1,6 @@
-﻿namespace HakatonApi.Models.CourseDtos;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace HakatonApi.Models.CourseDtos;
 
 public class CreateCourseDto
 {

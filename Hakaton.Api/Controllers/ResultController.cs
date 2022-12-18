@@ -1,4 +1,5 @@
 ﻿using HakatonApi.Entities;
+using HakatonApi.Filters;
 using HakatonApi.Models.ResultDtos;
 using HakatonApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -10,6 +11,7 @@ namespace HakatonApi.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 [Authorize]
+[ValidateModel]
 public class ResultController : ControllerBase
 {
     private readonly IResultService resultService;

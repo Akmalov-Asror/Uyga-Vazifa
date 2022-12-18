@@ -1,4 +1,5 @@
 ﻿using HakatonApi.Entities;
+using HakatonApi.Filters;
 using HakatonApi.Services.Interfaces;
 using HakatonApi.Models;
 using HakatonApi.Models.UserDtos;
@@ -11,6 +12,9 @@ namespace HakatonApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[ValidateModel]
+[TypeFilter(typeof(IsCourseExistsActionFilterAttribute))]
+[TypeFilter(typeof(IsTaskExistsActionFilterAttribute))]
 public class AccountController : ControllerBase
 {
     private readonly SignInManager<User> signInManager;

@@ -1,6 +1,10 @@
+using FluentValidation.AspNetCore;
+using FluentValidation;
 using HakatonApi.Extensions;
 using HakatonApi.Extensions.AddServiceFromAttribute;
+using HakatonApi.Logger;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +16,15 @@ builder.Services._AddCors();
 builder.Services._AddDbContext(builder.Configuration.GetConnectionString("Sqlite"));
 builder.Services._AddIdentity();
 builder._AddSerilogWithConfig();
+builder.SerilogConfig();
 builder.Services._AddServicesViaAttribute();
+
+builder.Services.AddFluentValidationAutoValidation(o =>
+{
+    o.DisableDataAnnotationsValidation = false;
+});
+
+builder.Services.AddValidatorsFromAssembly(Assembly.GetAssembly(typeof(Program)));
 
 var app = builder.Build();
 
