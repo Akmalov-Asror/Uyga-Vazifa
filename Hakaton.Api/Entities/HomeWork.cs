@@ -21,9 +21,3 @@ public class HomeWork
 
 }
 
-public enum TaskStatus
-{
-    created,
-    delayed,
-    finished,
-}

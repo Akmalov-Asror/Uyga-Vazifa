@@ -20,11 +20,3 @@ public class Result
     public virtual HomeWork? HomeWork { get; set; }
 }
 
-public enum EUserTaskStatus
-{
-    created,
-    finished,
-    accepted,
-    rejected,
-    allowedAgain
-}

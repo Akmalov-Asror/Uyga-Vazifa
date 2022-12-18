@@ -42,7 +42,7 @@ public class AppDbContext : IdentityDbContext<User, Role, Guid>
                 TaskName = "50 ta listga referat yozib keling",
                 TaskDescription ="bahonalar o`tmaydi, hatto spravka ham",
                 MaxScore = 100,
-                Status = Entities.ETaskStatus.Created,
+                Status =(TaskStatus) ETaskStatus.Created,
                 CourseId = courseId
             },
 
@@ -52,7 +52,7 @@ public class AppDbContext : IdentityDbContext<User, Role, Guid>
                 TaskName = "50 ta listga referat yozib keling",
                 TaskDescription ="bahonalar o`tmaydi, hatto spravka ham",
                 MaxScore = 100,
-                Status = Entities.ETaskStatus.Created,
+                Status = (TaskStatus)ETaskStatus.Created,
                 CourseId = courseId
             }
         });

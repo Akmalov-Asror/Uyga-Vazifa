@@ -13,5 +13,5 @@ public class CourseUser
 
     public Guid CourseId { get; set; }
     [ForeignKey(nameof(CourseId))]
-    public virtual Course? Course { get; set; }//
+    public virtual Course? Course { get; set; }
 }

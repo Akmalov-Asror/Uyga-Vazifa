@@ -9,11 +9,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace HakatonApi.Database.Migrations
+namespace HakatonApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221218042322_init")]
-    partial class init
+    [Migration("20221218135245_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,6 +39,14 @@ namespace HakatonApi.Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Courses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            CourseName = "firstRoom",
+                            Key = new Guid("688cc0a5-8b9f-4e94-8977-c27186f9ba84")
+                        });
                 });
 
             modelBuilder.Entity("HakatonApi.Entities.CourseUser", b =>
@@ -63,6 +71,15 @@ namespace HakatonApi.Database.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("CourseUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f6be323d-8eb1-427d-9151-7fedd4c15209"),
+                            CourseId = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            IsAdmin = true,
+                            UserId = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59")
+                        });
                 });
 
             modelBuilder.Entity("HakatonApi.Entities.HomeWork", b =>
@@ -103,6 +120,26 @@ namespace HakatonApi.Database.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("HomeWorks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f86f9202-59c2-483e-9bdd-c06d3fb4b9f8"),
+                            CourseId = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            MaxScore = 100,
+                            Status = 0,
+                            TaskDescription = "bahonalar o`tmaydi, hatto spravka ham",
+                            TaskName = "50 ta listga referat yozib keling"
+                        },
+                        new
+                        {
+                            Id = new Guid("46952c95-f2fa-478c-b344-98f9dfc6cf22"),
+                            CourseId = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            MaxScore = 100,
+                            Status = 0,
+                            TaskDescription = "bahonalar o`tmaydi, hatto spravka ham",
+                            TaskName = "50 ta listga referat yozib keling"
+                        });
                 });
 
             modelBuilder.Entity("HakatonApi.Entities.Result", b =>
@@ -141,7 +178,29 @@ namespace HakatonApi.Database.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Results");
+                    b.ToTable("Result");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("1432ea34-0fc7-453b-9b28-d52e9d21f293"),
+                            HomeWorkId = new Guid("f86f9202-59c2-483e-9bdd-c06d3fb4b9f8"),
+                            ResultStatus = 3,
+                            Score = 56,
+                            StudentComment = "Cut the bullshit",
+                            TeacherComment = "Men yorvorganman",
+                            UserId = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59")
+                        },
+                        new
+                        {
+                            Id = new Guid("32f2ec99-a29a-42ad-a5cc-6db32dedc0f4"),
+                            HomeWorkId = new Guid("46952c95-f2fa-478c-b344-98f9dfc6cf22"),
+                            ResultStatus = 2,
+                            Score = 96,
+                            StudentComment = "In shaa Allah",
+                            TeacherComment = "WOW",
+                            UserId = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59")
+                        });
                 });
 
             modelBuilder.Entity("HakatonApi.Entities.Role", b =>
@@ -246,6 +305,21 @@ namespace HakatonApi.Database.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "033f859b-a478-4b08-ba8a-3acad082e8b0",
+                            EmailConfirmed = false,
+                            FirstName = "Abdurauf",
+                            LastName = "Makhammatov",
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
+                            UserName = "Abdurauf"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>

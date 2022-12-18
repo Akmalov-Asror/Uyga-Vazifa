@@ -3,19 +3,17 @@ using System;
 using HakatonApi.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace HakatonApi.Database.Migrations
+namespace HakatonApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221218044223_News")]
-    partial class News
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,6 +37,47 @@ namespace HakatonApi.Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Courses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            CourseName = "firstRoom",
+                            Key = new Guid("688cc0a5-8b9f-4e94-8977-c27186f9ba84")
+                        });
+                });
+
+            modelBuilder.Entity("HakatonApi.Entities.CourseUser", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("boolean");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("CourseUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f6be323d-8eb1-427d-9151-7fedd4c15209"),
+                            CourseId = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            IsAdmin = true,
+                            UserId = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59")
+                        });
                 });
 
             modelBuilder.Entity("HakatonApi.Entities.HomeWork", b =>
@@ -47,7 +86,7 @@ namespace HakatonApi.Database.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("CourseId")
+                    b.Property<Guid>("CourseId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime?>("CreateDate")
@@ -79,6 +118,26 @@ namespace HakatonApi.Database.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("HomeWorks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f86f9202-59c2-483e-9bdd-c06d3fb4b9f8"),
+                            CourseId = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            MaxScore = 100,
+                            Status = 0,
+                            TaskDescription = "bahonalar o`tmaydi, hatto spravka ham",
+                            TaskName = "50 ta listga referat yozib keling"
+                        },
+                        new
+                        {
+                            Id = new Guid("46952c95-f2fa-478c-b344-98f9dfc6cf22"),
+                            CourseId = new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"),
+                            MaxScore = 100,
+                            Status = 0,
+                            TaskDescription = "bahonalar o`tmaydi, hatto spravka ham",
+                            TaskName = "50 ta listga referat yozib keling"
+                        });
                 });
 
             modelBuilder.Entity("HakatonApi.Entities.Result", b =>
@@ -87,20 +146,23 @@ namespace HakatonApi.Database.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("CompletedTime")
+                    b.Property<DateTime?>("CompletedTime")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("FilePath")
                         .HasColumnType("text");
 
+                    b.Property<Guid>("HomeWorkId")
+                        .HasColumnType("uuid");
+
                     b.Property<int>("ResultStatus")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("Score")
                         .HasColumnType("integer");
 
                     b.Property<string>("StudentComment")
                         .HasColumnType("text");
-
-                    b.Property<Guid>("TaskId")
-                        .HasColumnType("uuid");
 
                     b.Property<string>("TeacherComment")
                         .HasColumnType("text");
@@ -110,11 +172,33 @@ namespace HakatonApi.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TaskId");
+                    b.HasIndex("HomeWorkId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Results");
+                    b.ToTable("Result");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("1432ea34-0fc7-453b-9b28-d52e9d21f293"),
+                            HomeWorkId = new Guid("f86f9202-59c2-483e-9bdd-c06d3fb4b9f8"),
+                            ResultStatus = 3,
+                            Score = 56,
+                            StudentComment = "Cut the bullshit",
+                            TeacherComment = "Men yorvorganman",
+                            UserId = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59")
+                        },
+                        new
+                        {
+                            Id = new Guid("32f2ec99-a29a-42ad-a5cc-6db32dedc0f4"),
+                            HomeWorkId = new Guid("46952c95-f2fa-478c-b344-98f9dfc6cf22"),
+                            ResultStatus = 2,
+                            Score = 96,
+                            StudentComment = "In shaa Allah",
+                            TeacherComment = "WOW",
+                            UserId = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59")
+                        });
                 });
 
             modelBuilder.Entity("HakatonApi.Entities.Role", b =>
@@ -219,30 +303,21 @@ namespace HakatonApi.Database.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
 
-            modelBuilder.Entity("HakatonApi.Entities.UserCourse", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("CourseId")
-                        .HasColumnType("uuid");
-
-                    b.Property<bool>("IsAdmin")
-                        .HasColumnType("boolean");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("CourseUsers");
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "033f859b-a478-4b08-ba8a-3acad082e8b0",
+                            EmailConfirmed = false,
+                            FirstName = "Abdurauf",
+                            LastName = "Makhammatov",
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
+                            UserName = "Abdurauf"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -348,33 +423,7 @@ namespace HakatonApi.Database.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("HakatonApi.Entities.HomeWork", b =>
-                {
-                    b.HasOne("HakatonApi.Entities.Course", null)
-                        .WithMany("HomeWorks")
-                        .HasForeignKey("CourseId");
-                });
-
-            modelBuilder.Entity("HakatonApi.Entities.Result", b =>
-                {
-                    b.HasOne("HakatonApi.Entities.HomeWork", "Task")
-                        .WithMany("UserTasks")
-                        .HasForeignKey("TaskId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("HakatonApi.Entities.User", "User")
-                        .WithMany("UserTasks")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Task");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("HakatonApi.Entities.UserCourse", b =>
+            modelBuilder.Entity("HakatonApi.Entities.CourseUser", b =>
                 {
                     b.HasOne("HakatonApi.Entities.Course", "Course")
                         .WithMany("CourseUsers")
@@ -389,6 +438,36 @@ namespace HakatonApi.Database.Migrations
                         .IsRequired();
 
                     b.Navigation("Course");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("HakatonApi.Entities.HomeWork", b =>
+                {
+                    b.HasOne("HakatonApi.Entities.Course", "Course")
+                        .WithMany("HomeWorks")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("HakatonApi.Entities.Result", b =>
+                {
+                    b.HasOne("HakatonApi.Entities.HomeWork", "HomeWork")
+                        .WithMany("Results")
+                        .HasForeignKey("HomeWorkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HakatonApi.Entities.User", "User")
+                        .WithMany("HomeWorks")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HomeWork");
 
                     b.Navigation("User");
                 });
@@ -453,12 +532,12 @@ namespace HakatonApi.Database.Migrations
 
             modelBuilder.Entity("HakatonApi.Entities.HomeWork", b =>
                 {
-                    b.Navigation("UserTasks");
+                    b.Navigation("Results");
                 });
 
             modelBuilder.Entity("HakatonApi.Entities.User", b =>
                 {
-                    b.Navigation("UserTasks");
+                    b.Navigation("HomeWorks");
                 });
 #pragma warning restore 612, 618
         }

@@ -4,9 +4,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace HakatonApi.Database.Migrations
+namespace HakatonApi.Migrations
 {
-    public partial class init : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -225,7 +225,7 @@ namespace HakatonApi.Database.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Results",
+                name: "Result",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -240,19 +240,52 @@ namespace HakatonApi.Database.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Results", x => x.Id);
+                    table.PrimaryKey("PK_Result", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Results_AspNetUsers_UserId",
+                        name: "FK_Result_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Results_HomeWorks_HomeWorkId",
+                        name: "FK_Result_HomeWorks_HomeWorkId",
                         column: x => x.HomeWorkId,
                         principalTable: "HomeWorks",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "AvatarUrl", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59"), 0, null, "033f859b-a478-4b08-ba8a-3acad082e8b0", null, false, "Abdurauf", "Makhammatov", false, null, null, null, null, null, null, false, null, false, "Abdurauf" });
+
+            migrationBuilder.InsertData(
+                table: "Courses",
+                columns: new[] { "Id", "CourseName", "Key" },
+                values: new object[] { new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"), "firstRoom", new Guid("688cc0a5-8b9f-4e94-8977-c27186f9ba84") });
+
+            migrationBuilder.InsertData(
+                table: "CourseUsers",
+                columns: new[] { "Id", "CourseId", "IsAdmin", "UserId" },
+                values: new object[] { new Guid("f6be323d-8eb1-427d-9151-7fedd4c15209"), new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"), true, new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59") });
+
+            migrationBuilder.InsertData(
+                table: "HomeWorks",
+                columns: new[] { "Id", "CourseId", "CreateDate", "EndDate", "FilePath", "MaxScore", "StartDate", "Status", "TaskDescription", "TaskName" },
+                values: new object[,]
+                {
+                    { new Guid("46952c95-f2fa-478c-b344-98f9dfc6cf22"), new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"), null, null, null, 100, null, 0, "bahonalar o`tmaydi, hatto spravka ham", "50 ta listga referat yozib keling" },
+                    { new Guid("f86f9202-59c2-483e-9bdd-c06d3fb4b9f8"), new Guid("1d380594-bd49-412a-b1e6-1b165e3942ed"), null, null, null, 100, null, 0, "bahonalar o`tmaydi, hatto spravka ham", "50 ta listga referat yozib keling" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Result",
+                columns: new[] { "Id", "CompletedTime", "FilePath", "HomeWorkId", "ResultStatus", "Score", "StudentComment", "TeacherComment", "UserId" },
+                values: new object[,]
+                {
+                    { new Guid("1432ea34-0fc7-453b-9b28-d52e9d21f293"), null, null, new Guid("f86f9202-59c2-483e-9bdd-c06d3fb4b9f8"), 3, 56, "Cut the bullshit", "Men yorvorganman", new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59") },
+                    { new Guid("32f2ec99-a29a-42ad-a5cc-6db32dedc0f4"), null, null, new Guid("46952c95-f2fa-478c-b344-98f9dfc6cf22"), 2, 96, "In shaa Allah", "WOW", new Guid("324a27ca-c266-4b1d-a5fa-388c24647f59") }
                 });
 
             migrationBuilder.CreateIndex(
@@ -308,13 +341,13 @@ namespace HakatonApi.Database.Migrations
                 column: "CourseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Results_HomeWorkId",
-                table: "Results",
+                name: "IX_Result_HomeWorkId",
+                table: "Result",
                 column: "HomeWorkId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Results_UserId",
-                table: "Results",
+                name: "IX_Result_UserId",
+                table: "Result",
                 column: "UserId");
         }
 
@@ -339,7 +372,7 @@ namespace HakatonApi.Database.Migrations
                 name: "CourseUsers");
 
             migrationBuilder.DropTable(
-                name: "Results");
+                name: "Result");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

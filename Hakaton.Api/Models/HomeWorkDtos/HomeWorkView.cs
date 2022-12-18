@@ -1,4 +1,4 @@
-﻿using TaskStatus = HakatonApi.Entities.TaskStatus;
+﻿using TaskStatus = HakatonApi.Entities.ETaskStatus;
 
 namespace HakatonApi.Models.HomeWorkDtos;
 
