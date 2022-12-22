@@ -14,7 +14,7 @@ namespace HakatonApi.Controllers;
 [ApiController]
 [ValidateModel]
 [TypeFilter(typeof(IsCourseExistsActionFilterAttribute))]
-[TypeFilter(typeof(IsTaskExistsActionFilterAttribute))]
+
 public class AccountController : ControllerBase
 {
     private readonly SignInManager<User> signInManager;
